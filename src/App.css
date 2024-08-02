@@ -1,38 +1,433 @@
-.App {
-  text-align: center;
+:root {
+  --dark-blue: #660ea3;
+  --gray: #aea2a8;
+  --red: #ff3333;
+  --green: #008000; 
+  --white: #fff;
+  --light-green:#d4edda;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #233553;
+.todo-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
+  background-image: url(/public/rupac.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: auto; 
+  box-sizing: border-box;
+  padding: 20px; /* Ajusta según sea necesario para evitar el desbordamiento */
+}
+
+.todo-container {
+  border: 3px solid var(--white);
+  border-radius: 36px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(55, 167, 223, 0.3);
+  width: 100%;
+  max-width: 480px; /* Limita el ancho máximo del contenedor */
+  height: 820px;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+
+  
+}
+
+.todo-counter {
+  color: var(--white);
+  width: 90%;
+  height: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+
+.todo-counter__title {
+  font-size: 36px;
+  text-align: center;
+  margin: 0;
+}
+
+.todo-counter__subtitle {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.todo-search {
+  width: 75%;
+  height: 32px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  padding: 2px 24px;
+  box-sizing: border-box;
+  background: var(--white);
+  margin: 20px 0px
+
+}
+
+.todo-search__input {
+  margin: 0;
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 2px;
+}
+
+.todo-search__icon {
+  color: var(--dark-blue);
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.todo-list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 460px;
+  width: 90%;
+  padding-top: 12px;
+  overflow-y: auto;
+}
+
+
+.todo-list::-webkit-scrollbar {
+  display: none;
+}
+
+.todo-item {
+  margin-bottom: 24px; 
+}
+
+.todo-item:last-child {
+  margin-bottom: 0;
+}
+
+.todo-item__content {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  margin: 0;
+  padding: 0;
+  justify-items: center;
+  align-items: center;
+  height: 44px;
+  width: 100%;
+  border-radius: 12px;
+  position: relative;
+  background: var(--white);
+  cursor: pointer;
+ 
+}
+
+.todo-item__content--completed{
+  background:var(--light-green);
+}
+
+
+
+.todo-item__icon {
+  color: var(--red);
+  font-size: 16px;
+}
+
+.todo-item__icon--completed {
+  color: var(--green);
+}
+
+.todo-item__text {
+  margin: 0;
+  color: var(--dark-blue);
+  font-size: 14px;
+  font-weight: 500;
+  
+}
+
+.todo-item__text--completed{
+  margin: 0;
+  color: var(--dark-blue);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: line-through;
+}
+
+.todo-item__delete {
+  border: 2px solid var(--gray);
+  height: 18px;
+  width: 18px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 16px;
+  top: -20%;
+  background: var(--dark-blue);
+  cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.todo-item__delete:hover {
+  transform: scale(1.1);
+}
+
+.todo-item__delete-icon {
+  color: var(--white);
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.todo-button{
+  position: absolute; /* Posiciona el botón dentro del contenedor */
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  right: 20px; /* Ajusta la distancia desde el lado derecho */
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1001;
+}
+
+
+.todo-button__container {
+  height: 36px;
+  width: 36px;
+  border: 3px solid var(--gray);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: var(--dark-blue);
+  transition: transform 0.5s ease;
+}
+
+.todo-button__container:hover {
+  transform: scale(1.1) rotate(135deg);
+}
+
+.todo-button__icon {
+  color: var(--white);
+  font-size: 24px;
+}
+
+
+.Todos-Loading{
+  height: 300;
+  width: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-top: 40px;
+
+}
+
+
+
+.Todo-Loading__custom-loader {
+  width: 50px;
+  height: 50px;
+  display: grid;
+}
+.Todo-Loading__custom-loader::before,
+.Todo-Loading__custom-loader::after {    
+  content:"";
+  grid-area: 1/1;
+  --c: radial-gradient(farthest-side,white 70%,#0000);
+  background: 
+    var(--c) 50%  0, 
+    var(--c) 50%  100%, 
+    var(--c) 100% 50%, 
+    var(--c) 0    50%;
+  background-size: 12px 12px;
+  background-repeat: no-repeat;
+  animation: s2 2s infinite;
+}
+.Todo-Loading__custom-loader::before {
+margin:4px;
+filter:hue-rotate(45deg);
+background-size: 8px 8px;
+animation-timing-function: linear
+}
+
+@keyframes s2{ 
+100%{transform: rotate(.5turn)}
+}
+
+
+.Todo-Loading__loader-text {
+  width: fit-content;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 30px;
+  clip-path: inset(0 3ch 0 0);
+  animation: l4 1s steps(4) infinite;
   color: white;
 }
+.Todo-Loading__loader-text:before {
+  content:"Cargando..."
+}
+@keyframes l4 {to{clip-path: inset(0 -1ch 0 0)}}
 
-.App-link {
-  color: #97ca3f;
+
+
+
+.Empty-Todos__loader {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 18px;
+  color: white;
+  animation: l1 1.5s linear infinite alternate;
+  text-align: center;
+}
+.Empty-Todos__loader:before {
+  content:"No se encontraron tareas, darling. ¡Hora de agregar algunas!"
+}
+@keyframes l1 {to{opacity: 0}}
+
+
+.Modal__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Modal__Overlay--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.Modal__Content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 1000;
+  background-color: var(--light-green);
+  padding: 20px;
+  border: 3px solid var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.Modal__Content--open {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.Todo-form{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.Todo-form__label{
+  text-align: center;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
+
+.Todo-form__textArea{
+  align-self: center;
+  resize: none;
+  margin: 24px;
+  width: 85%;
+  height: 80px;
+  border-radius: 7px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.Todo-form__Container-Button{
+
+  height: 32px;
+  width: 85%;
+  align-self: center;
+  align-content: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Todo-form__Button-Crear{
+  background: green;
+  border-radius: 8px;
+  color: white;
+  width: 72px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Todo-form__Button-Crear:hover {
+  background-color: #228B22; /* ForestGreen */
+  transform: scale(1.05);
+}
+
+.Todo-form__Button-Cerrar{
+  background: red;
+  border-radius: 8px;
+  color: white;
+  width: 72px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Todo-form__Button-Cerrar:hover{
+
+  transform: scale(1.05);
+}
+
+
+.Todo-form__error {
+  height: 30px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f5f5f5;
+
+  color: black;
+  border: red solid 2px;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
 }
