@@ -6,17 +6,16 @@ function TodoCounter() {
   const { completedTodos, totalTodos } = React.useContext(TodoContext);
   return (
     <div className="todo-counter">
-      <h1 className="todo-counter__title">Tareas de Ximena</h1>
+      <h1 className="todo-counter__title">Gestor de Tareas</h1>
       <h2 className="todo-counter__subtitle">
         {completedTodos === 0
-          ? "Abuelita, es hora de empezar tus tareas"
+          ? "Sin tareas completas. ¡A trabajar!"
           : completedTodos === totalTodos
-          ? "¡Felicitaciones, Ximena! Te ganaste un fourloko 🎉"
-          : `Has completado ${completedTodos} de ${totalTodos} tareas, abuelita. ¡Sigue así!`}
+          ? "¡Felicidades! Has completado todas tus tareas."
+          : `Has completado ${completedTodos} de ${totalTodos} tareas. ¡Continúa así!`}
       </h2>
     </div>
   );
-  
 }
 
 export { TodoCounter };

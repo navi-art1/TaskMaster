@@ -193,9 +193,9 @@
 }
 
 .todo-button{
-  position: absolute; /* Posiciona el botón dentro del contenedor */
-  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
-  right: 20px; /* Ajusta la distancia desde el lado derecho */
+  position: absolute;
+  bottom: 20px; 
+  right: 20px; 
   display: flex;
   justify-content: flex-end;
   z-index: 1001;
@@ -296,7 +296,7 @@ animation-timing-function: linear
   text-align: center;
 }
 .Empty-Todos__loader:before {
-  content:"No se encontraron tareas, darling. ¡Hora de agregar algunas!"
+  content: "No se encontraron tareas. ¡Es momento de agregar algunas!";
 }
 @keyframes l1 {to{opacity: 0}}
 

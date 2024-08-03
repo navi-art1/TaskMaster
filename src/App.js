@@ -4,16 +4,11 @@ import { TodoProvider } from "./TodoContext";
 
 import "./App.css";
 
-
-
-
 function App() {
-
   return (
     <TodoProvider>
-      <AppUI/>
+      <AppUI />
     </TodoProvider>
-    
   );
 }
 
