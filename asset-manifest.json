@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/TaskMaster/static/css/main.f95ea5bc.css",
+    "main.js": "/TaskMaster/static/js/main.a698d78d.js",
+    "static/media/rupac.jpg": "/TaskMaster/static/media/rupac.b41137ce34feb5c04d9a.jpg",
+    "index.html": "/TaskMaster/index.html",
+    "main.f95ea5bc.css.map": "/TaskMaster/static/css/main.f95ea5bc.css.map",
+    "main.a698d78d.js.map": "/TaskMaster/static/js/main.a698d78d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f95ea5bc.css",
+    "static/js/main.a698d78d.js"
+  ]
+}
