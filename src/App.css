@@ -437,8 +437,9 @@ animation-timing-function: linear
   .todo-container {
     height: auto; 
     padding: 60px 20px;
-    margin: 30px auto;
+    margin: auto;
     border-radius: 24px;
+    max-height: calc(100vh - 100px);
   }
 
   .todo-list {
