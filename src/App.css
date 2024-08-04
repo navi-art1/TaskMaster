@@ -32,7 +32,7 @@
   align-items: center;
   background: rgba(55, 167, 223, 0.3);
   width: 100%;
-  max-width: 480px; /* Limita el ancho máximo del contenedor */
+  max-width: 480px; 
   height: 820px;
   padding: 10px;
   margin: 10px;
@@ -430,4 +430,22 @@ animation-timing-function: linear
 @keyframes fadeInOut {
   0%, 100% { opacity: 0; }
   25%, 75% { opacity: 1; }
+}
+
+
+@media (max-height: 800px) {
+  .todo-container {
+    height: auto; 
+    padding: 60px 20px;
+    margin: 30px auto;
+    border-radius: 24px;
+  }
+
+  .todo-list {
+
+    height: 320px; 
+    padding-top: 8px;
+    border: none;
+    margin: 0 auto; 
+  }
 }

@@ -1,16 +1,50 @@
-# Repositorio base del Curso de Introducción a React.js en Platzi
+# TaskMaster
 
-¡Hola, Platzinauta!
+TaskMaster es una aplicación sencilla de gestión de tareas desarrollada para practicar y mejorar mis habilidades en React. Este proyecto me permitió experimentar con el ciclo de vida de un software completo, desde su diseño inicial hasta el despliegue final.
 
-En este repositorio encontrarás el código de todas las clases del [Curso de Introducción a React.js](https://platzi.com/reactjs). Para empezar solo debes clonar este repositorio (`git clone`), instalar sus dependencias (`npm i`) y ejecutar la aplicación (`npm start`).
+## Descripción del Proyecto
 
-La rama principal contiene el código con el que eempezamos el curso. En las demás ramas encontrarás el código de las siguientes clases y finalmente el deploy de la aplicación.
+El objetivo principal de TaskMaster es proporcionar una interfaz intuitiva y sencilla para gestionar listas de tareas. Los usuarios pueden crear, editar y eliminar tareas, así como marcar las tareas completadas. Este proyecto fue diseñado y desarrollado con un enfoque en el aprendizaje y la práctica de habilidades de desarrollo frontend modernas.
 
-¡Mucha suerte aprendiendo React! #NuncaParesDeAprender
+## Ciclo de Vida del Software
+
+TaskMaster fue desarrollado siguiendo un ciclo de vida completo de software:
+
+1. **Diseño en Figma:** El proyecto comenzó con el diseño de la interfaz de usuario en Figma, permitiendo planificar el layout y la experiencia del usuario antes de la implementación.
+2. **Desarrollo en React:** Una vez definido el diseño, la aplicación fue desarrollada utilizando React, aprovechando su capacidad para construir interfaces de usuario interactivas y dinámicas.
+3. **Despliegue en GitHub Pages:** Finalmente, la aplicación fue desplegada en GitHub Pages, permitiendo que esté disponible públicamente y proporcionando experiencia en el ciclo de despliegue de aplicaciones web.
+
+## Tecnologías Utilizadas
+
+- **React:** Usado para la construcción de la interfaz de usuario y la gestión del estado de la aplicación.
+- **React Context:** Implementado para manejar el estado global de la aplicación de manera eficiente.
+- **JavaScript (ES6):** Lenguaje de programación utilizado para desarrollar la lógica de la aplicación.
+- **HTML5 y CSS3:** Utilizados para estructurar y dar estilo a la aplicación.
+- **CSS con Estilo BEM:** Empleado para una organización clara y mantenible de los estilos CSS.
+- **Figma:** Utilizado para el diseño y prototipado de la interfaz de usuario.
+
+## Funcionalidades Destacadas
+
+- **Modales:** Implementados para mejorar la interacción del usuario, permitiendo realizar acciones como añadir o editar tareas de manera clara y sin distracciones del resto de la interfaz.
+
+## Diseño en Figma
+
+El diseño de la interfaz de usuario fue realizado en Figma, permitiendo una visualización clara del layout antes de la implementación. Puedes ver el diseño completo en el siguiente enlace:
+
+[Ver Diseño en Figma](https://www.figma.com/file/tu-link-aqui)
+
+
+## Despliegue
+
+TaskMaster ha sido desplegado utilizando GitHub Pages y está disponible en el siguiente enlace:
+
+[Ver TaskMaster en GitHub Pages](https://navi-art1.github.io/TaskMaster)
 
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 
 ## Available Scripts
 

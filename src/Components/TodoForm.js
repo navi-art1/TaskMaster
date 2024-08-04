@@ -3,22 +3,38 @@ import React from "react";
 import { TodoContext } from "../TodoContext";
 
 function TodoForm() {
-  const { addTodo, setOpenModal } = React.useContext(TodoContext);
+  // Obtener las tareas actuales del contexto
+  const { addTodo, setOpenModal, todos } = React.useContext(TodoContext);
 
   const [newTodoValue, setNewTodoValue] = React.useState('');
-  const [showErrorMessage, setShowErrorMessage] = React.useState(false);
+  const [errorMessage, setErrorMessage] = React.useState('');
 
   const onSubmit = (event) => {
     event.preventDefault();
-    if (newTodoValue.trim() === '') {
-      setShowErrorMessage(true);
+
+    const trimmedTodo = newTodoValue.trim().toLowerCase();
+
+
+    if (trimmedTodo === '') {
+      setErrorMessage('Por favor, escribe una tarea antes de agregarla');
       setTimeout(() => {
-        setShowErrorMessage(false);
+        setErrorMessage('');
       }, 2000);
-    } else {
-      addTodo(newTodoValue);
-      setOpenModal(false);
+      return;
     }
+
+    const isDuplicate = todos.some((todo) => todo.text.toLowerCase() === trimmedTodo);
+
+    if (isDuplicate) {
+      setErrorMessage('No se pueden crear tareas iguales');
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 2000);
+      return;
+    }
+
+    addTodo(newTodoValue.trim());
+    setOpenModal(false);
   };
 
   const onCancel = () => {
@@ -27,8 +43,8 @@ function TodoForm() {
 
   const onChange = (event) => {
     setNewTodoValue(event.target.value);
-    if (showErrorMessage) {
-      setShowErrorMessage(false);
+    if (errorMessage) {
+      setErrorMessage('');
     }
   };
 
@@ -41,7 +57,7 @@ function TodoForm() {
         className="Todo-form__textArea" 
         placeholder="Nueva tarea"
       />
-      {showErrorMessage && <div className="Todo-form__error">Por favor, escribe una tarea antes de agregarla</div>}
+      {errorMessage && <div className="Todo-form__error">{errorMessage}</div>}
       <div className="Todo-form__Container-Button">
         <button 
           type="button"
