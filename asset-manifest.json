@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/TaskMaster/static/css/main.b93301f2.css",
+    "main.css": "/TaskMaster/static/css/main.276355a8.css",
     "main.js": "/TaskMaster/static/js/main.024265e9.js",
     "static/media/rupac.jpg": "/TaskMaster/static/media/rupac.b41137ce34feb5c04d9a.jpg",
     "index.html": "/TaskMaster/index.html",
-    "main.b93301f2.css.map": "/TaskMaster/static/css/main.b93301f2.css.map",
+    "main.276355a8.css.map": "/TaskMaster/static/css/main.276355a8.css.map",
     "main.024265e9.js.map": "/TaskMaster/static/js/main.024265e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.b93301f2.css",
+    "static/css/main.276355a8.css",
     "static/js/main.024265e9.js"
   ]
 }
