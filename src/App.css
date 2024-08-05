@@ -435,18 +435,40 @@ animation-timing-function: linear
 
 @media (max-height: 800px) {
   .todo-container {
-    height: auto; 
-    padding: 60px 20px;
-    margin: auto;
-    border-radius: 24px;
-    max-height: calc(100vh - 100px);
+    height: 600px;
+    border-radius: 18px;
+  }
+
+  .todo-counter__title {
+    font-size: 30px;
+  }
+
+  .todo-counter__subtitle {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
+
+  .todo-search {
+    width: 80%;
+    margin: 12px 0px;
   }
 
   .todo-list {
-
-    height: 320px; 
+    height: 320px;
     padding-top: 8px;
     border: none;
-    margin: 0 auto; 
+    margin: 0 auto;
+  }
+
+
+  .todo-button__container {
+    height: 30px;
+    width: 30px;
+  }
+
+  .todo-button__icon {
+    color: var(--white);
+    font-size: 20px;
   }
 }
