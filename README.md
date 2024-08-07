@@ -31,7 +31,7 @@ TaskMaster fue desarrollado siguiendo un ciclo de vida completo de software:
 
 El diseño de la interfaz de usuario fue realizado en Figma, permitiendo una visualización clara del layout antes de la implementación. Puedes ver el diseño completo en el siguiente enlace:
 
-[Ver Diseño en Figma](https://www.figma.com/file/tu-link-aqui)
+[Ver Diseño en Figma](https://www.figma.com/design/SzNvZpyOA2Jpy68Iyh6pmM/Task-Master?node-id=0-1&t=TCBsJYsmUAvaQt6y-1)
 
 
 ## Despliegue
